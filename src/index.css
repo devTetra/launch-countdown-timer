@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-image {
+  background:
+    url("./assets/pattern-hills.svg") bottom no-repeat,
+    url("./assets/bg-stars.svg") center repeat;
+  @apply bg-dark-purple;
+}
+
+.time-card {
+  @apply flex flex-col items-center gap-2;
+}
+
+.time-page {
+  @apply bg-very-black-blue relative rounded-lg pb-3;
+}
+
+.dot {
+  content: "";
+  border-radius: 50px 50px 0px 0px;
+
+  @apply bg-very-black-blue absolute top-[27px] z-10 block h-[4px] w-[8px] md:top-[41px] md:h-[5px] md:w-[10px];
+}
+
+.time-page::before {
+  @apply dot -left-[3%] rotate-90;
+}
+
+.time-page::after {
+  @apply dot -right-[4%] -rotate-90 md:-right-[3%];
+}
+
+.time-num {
+  @apply text-soft-red bg-dark-desat-blue min-w-[70px] rounded-lg p-2 text-center text-4xl font-bold md:min-w-[107px] md:p-5 md:text-5xl;
+}
+
+.time-text {
+  @apply text-grayish-blue text-[8px] font-bold uppercase tracking-[0.3em] md:text-sm;
+}
+
+.flip {
+  @apply absolute w-[70px] -translate-y-[27px] transform border-t-[1px] border-[#27273e] p-5 md:w-[107px] md:-translate-y-[44px];
+}
